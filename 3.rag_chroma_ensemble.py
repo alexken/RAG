@@ -1,4 +1,4 @@
-import logging
+import sys, logging
 from langchain_chroma import Chroma
 from langchain.retrievers import EnsembleRetriever
 from langchain_community.chat_models import ChatOllama
@@ -6,6 +6,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
+sys.stderr=None
 logging.getLogger().setLevel(logging.ERROR)
 
 template =  """Answer the question based only on the following context.
