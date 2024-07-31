@@ -1,6 +1,7 @@
-import logging
+import sys, logging
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+sys.stderr = None
 logging.getLogger().setLevel(logging.ERROR)
 
 embeddings = HuggingFaceEmbeddings(model_name="bespin-global/klue-sroberta-base-continue-learning-by-mnr")
