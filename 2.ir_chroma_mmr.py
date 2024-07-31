@@ -19,7 +19,6 @@ def format_docs(docs):
 
 for query in queries:
     embedding_vector = embeddings.embed_query(query)
-    # docs = db.similarity_search_by_vector_with_relevance_scores(embedding_vector, 3)
     docs = db.max_marginal_relevance_search_by_vector(embedding_vector, k=5, fetch_k=10, lambda_mult=1)
     print(f">>> QUERY: {query} \n>>> RESULT:")
     for d in docs:
