@@ -17,7 +17,6 @@ prompt = ChatPromptTemplate.from_template(template)
 embeddings = HuggingFaceEmbeddings(model_name="bespin-global/klue-sroberta-base-continue-learning-by-mnr")
 db = Chroma(persist_directory="./chroma_db_mmr_1000", embedding_function=embeddings)
 retriever = db.as_retriever(search_type="mmr", search_kwargs={'k':3,'fetch_k':10, 'lambda_mult': 0.7})
-#retriever = db.as_retriever(search_type="mmr", search_kwargs={'k':3})
 model = ChatOllama(model="eeve" )
 
 def format_docs(docs):
