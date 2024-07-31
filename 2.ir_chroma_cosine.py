@@ -23,5 +23,5 @@ for query in queries:
    
     print(f">>> QUERY: {query} \n>>> RESULT:")
     for d, s in docs:
-     5   if s > 0.5: print(f"🗎 {d.page_content}\n  ▫️ 출처: {d.metadata['source']} ({s})\n")
+        if s > 0.5: print(f"🗎 {d.page_content}\n  ▫️ 출처: {d.metadata['source']} ({s})\n")
     print("─" * 100)
